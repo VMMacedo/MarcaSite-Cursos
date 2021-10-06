@@ -42,7 +42,7 @@
                     <td class="text-center">
                         <div class="row">
                             <div class="col-4">
-                                <button type="button" value="{{ $inscricao->id }}" class="btn btn-success btn-sm linkpag"
+                                <button type="button" value="{{ $inscricao->id }}" {{ $inscricao->status === 1 ? 'disabled' : ''}} class="btn btn-success btn-sm linkpag"
                                     id="linkpag" title="Link PagSeguro">
                                     <i class="fas fa-money-bill-wave"></i></button>
                             </div>
@@ -340,7 +340,8 @@
                 edit: "{{ route('inscricao.put', '') }}",
                 showCursos: "{{ route('cursos.get') }}",
                 editStatus: "{{ route('inscricao.pustatus', '') }}",
-                linkPag: "{{ route('inscricao.linkPagamento', '') }}"
+                linkPag: "{{ route('inscricao.linkPagamento', '') }}",
+                checkout: "{{ route('checkout.index', '')}}"
             }
 
         };

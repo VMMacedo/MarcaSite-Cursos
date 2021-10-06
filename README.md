@@ -42,6 +42,19 @@ O usuários inseridos pelo seed:
 - User: operador@operador.com.br
 - Senha: 123456789
 ```
+
+Adicionar Email e Token Pagseguro
+
+```
+- Aba 'Tokens'
+```
+
+## :airplane: Release
+
+```
+- Checkout Transparente
+```
+
 ## 🛠️ Construído com
 
 Mencione as ferramentas que você usou para criar seu projeto

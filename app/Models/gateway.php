@@ -10,5 +10,5 @@ class gateway extends Model
     use HasFactory;
 
     protected $table = 'gateways';
-    protected $fillable = ['email', 'token'];
+    protected $fillable = ['email', 'token', 'urlnotificacao'];
 }

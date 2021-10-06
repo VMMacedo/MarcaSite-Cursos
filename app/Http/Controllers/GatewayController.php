@@ -48,6 +48,7 @@ class GatewayController extends Controller
             $gateway->forceFill([
                 'email' => $request->email,
                 'token' => $request->token,
+                'urlnotificacao' => $request->urlnotificacao,
             ])->save();
             return true;
         }

@@ -26,6 +26,7 @@ class StoreGateway extends FormRequest
         return [
             'email' => ['required', 'min:5', 'max:255'],
             'token' => ['required', 'min:5', 'max:255'],
+            'urlnotificacao' => ['required']
         ];
     }
 }

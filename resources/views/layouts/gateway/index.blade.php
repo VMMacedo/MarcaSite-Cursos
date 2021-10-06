@@ -10,6 +10,7 @@
                 <th>#</th>
                 <th>Email</th>
                 <th>Token</th>
+                <th>URL Notificação</th>
                 <th class="text-center">Opções</th>
             </tr>
         </thead>
@@ -19,6 +20,7 @@
                     <td> {{ $gate->id }}</td>
                     <td>{{ $gate->email }}</td>
                     <td>{{ $gate->token }}</td>
+                    <td>{{ $gate->urlnotificacao }}</td>
                     <td class="text-center">
                         <button type="button" value="{{ $gate->id }}" class="btn btn-secondary btn-sm editgateway"
                             id="editgateway" title="Editar" data-bs-toggle="modal" data-bs-target="#editgatewaymodal"><i
@@ -67,6 +69,11 @@
                                 <input type="text" required class="form-control" id="token" name="token"
                                     aria-describedby="token">
                             </div>
+                            <div class="mb-3">
+                                <label for="urlnotificacao" class="form-label">URL Notificação</label>
+                                <input type="text" required class="form-control" id="urlnotificacao" name="urlnotificacao"
+                                    aria-describedby="urlnotificacao">
+                            </div>
                         </div>
                     </div>
                     <div id="alert_addtoken"></div>
@@ -106,6 +113,12 @@
                                     <input type="text" required name="token" id="token" class="form-control">
                                 </div>
 
+                                <div class="mb-3">
+                                    <label for="urlnotificacao" class="form-label">URL Notificação</label>
+                                    <input type="text" required name="urlnotificacao" id="urlnotificacao"
+                                        class="form-control">
+                                </div>
+
                             </div>
                             <div id="alert_gatewayedit"></div>
                         </div>
@@ -117,7 +130,7 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
     <!-- Modal Usuários Destroy -->
     <div class="modal fade" id="deletegatewaymodal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">

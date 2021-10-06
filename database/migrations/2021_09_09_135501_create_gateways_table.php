@@ -18,6 +18,7 @@ class CreateGatewaysTable extends Migration
             $table->timestamps();
             $table->string('email');
             $table->string('token');
+            $table->string('urlnotificacao');
         });
     }
 

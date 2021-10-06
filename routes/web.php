@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\{
+    CheckoutController,
     CursoController,
     dashboardController,
     GatewayController,
@@ -61,6 +62,15 @@ Route::get('/users', [ListUsers::class, 'index'])->name('users.index')->middlewa
 
 /**ROTA PERFIL */
 Route::get('/perfil', [perfil::class, 'index'])->name('perfil.index')->middleware('auth');
+
+/**ROTA CHECKOUT TRANSPARENTE */
+Route::prefix('checkout')->group(function () {
+    Route::get('/{id}', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/gerarBoleto/{id}/{hash}', [CheckoutController::class, 'gerarBoleto'])->name('checkout.gerarBoleto');
+    Route::post('/creditCard/gerar/{id}/{token}/{hash}', [CheckoutController::class, 'gerarCartaoCredito'])->name('checkout.gerarCartaoCredito');
+});
+/**ROTA PARA O WEBHOOK */
+Route::post('/webhook', [CheckoutController::class, 'tratarWebhook'])->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class])->name('checkout.tratarWebhook');
 
 
 /**ROTA DASHBOARD */

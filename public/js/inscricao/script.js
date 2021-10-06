@@ -2,7 +2,11 @@
 $(document).on('click', '.linkpag', function () {
     var idUser = $(this).val();
     var button = $(this);
-    $.ajaxSetup({
+    window.open(config.routes.checkout + '/' + idUser, '_blank');
+    /**LINK TRANSPARENTE */
+
+    /**LINK DO PAGSEGURO */
+    /*$.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
         }
@@ -78,7 +82,7 @@ $(document).on('click', '.linkpag', function () {
 
             $('#alert_geral').html(alert);
         }
-    });
+    });*/
 });
 /**MUDANÇA DO STATUS */
 $(document).on('change', '.statusInscrito', function () {
